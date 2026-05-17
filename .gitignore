@@ -1,0 +1,48 @@
+# ── Environment & Secrets ────────────────────────────────────────
+# CRITICAL: Never commit .env files — they contain API keys
+.env
+.env.*
+!.env.example
+
+# ── Python ───────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+wheels/
+*.whl
+
+# ── Virtual Environments ────────────────────────────────────────
+.venv/
+venv/
+ENV/
+
+# ── IDE & Editor ────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Linting & Tool Caches ──────────────────────────────────────
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── uv lock file (large, regenerated from pyproject.toml) ──────
+uv.lock
+
+# ── ADK artifacts & session data ────────────────────────────────
+adk_test/.adk/
+
+# ── Scratch / temp files ────────────────────────────────────────
+scratch_*.py
+test_nim.py
