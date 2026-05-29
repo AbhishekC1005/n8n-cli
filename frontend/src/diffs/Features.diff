@@ -1,0 +1,227 @@
+diff --git a/frontend/src/App.tsx b/frontend/src/components/Features.tsx
+similarity index 92%
+rename from monolithic App.tsx (Capabilities/Features Section)
+rename to frontend/src/components/Features.tsx
+--- a/frontend/src/App.tsx
++++ b/frontend/src/components/Features.tsx
+@@ -252,108 +252,114 @@
+-      {/* ── CLI Capabilities Section (Features) ── */}
+-      <section id="features" className="services-site reveal-on-scroll">
+-        <div className="container">
+-          <div className="section-badge-center">
+-            <div className="badge-pill">
+-              <div className="badge-dot"></div>
+-              <span>Capabilities</span>
+-            </div>
+-            <h2 className="title-section">Unleash Autonomous <span className="text-neon">n8n Workflow</span> Creation</h2>
+-            <p className="desc-section">
+-              Equipped with modular Google ADK tools to design, audit, and debug your automation pipelines directly from the console.
+-            </p>
+-          </div>
+-
+-          <div className="services-grid-layout">
+-            {/* Feature 1 */}
+-            <div className="service-card-green card-green">
+-              <div className="service-icon-green">
+-                <Sparkles size={22} />
+-              </div>
+-              <h3 className="service-card-title">Autonomous JSON Creation</h3>
+-              <p className="service-card-desc">Describe your automation goal in plain English, and the subagent builds a syntactically-correct n8n workflow JSON tree.</p>
+-              <a href="#compiler" className="service-card-more-btn">
+-                <span>See Specs</span>
+-                <div className="service-arrow-circle">
+-                  <ArrowRight size={12} />
+-                </div>
+-              </a>
+-            </div>
+-
+-            {/* Feature 2 */}
+-            <div className="service-card-green card-green">
+-              <div className="service-icon-green">
+-                <Layers size={22} />
+-              </div>
+-              <h3 className="service-card-title">Self-Healing Validator Linter</h3>
+-              <p className="service-card-desc">Automatically validates connections. If routing node names mismatch, the linter repairs the topology recursively before saving.</p>
+-              <a href="#compiler" className="service-card-more-btn">
+-                <span>See Specs</span>
+-                <div className="service-arrow-circle">
+-                  <ArrowRight size={12} />
+-                </div>
+-              </a>
+-            </div>
+-
+-            {/* Feature 3 */}
+-            <div className="service-card-green card-green">
+-              <div className="service-icon-green">
+-                <Award size={22} />
+-              </div>
+-              <h3 className="service-card-title">Credential Auto-Discovery</h3>
+-              <p className="service-card-desc">Queries active integrations (Slack, Sheets, Postgres) from n8n and automatically references them in nodes to run securely.</p>
+-              <a href="#compiler" className="service-card-more-btn">
+-                <span>See Specs</span>
+-                <div className="service-arrow-circle">
+-                  <ArrowRight size={12} />
+-                </div>
+-              </a>
+-            </div>
+-
+-            {/* Feature 4 */}
+-            <div className="service-card-green card-green">
+-              <div className="service-icon-green">
+-                <Terminal size={22} />
+-              </div>
+-              <h3 className="service-card-title">Interactive Terminal Console</h3>
+-              <p className="service-card-desc">Includes direct stateful command completions like `/list` (pipelines), `/history` (executions), or `/activate` for high-speed controls.</p>
+-              <a href="#compiler" className="service-card-more-btn">
+-                <span>See Specs</span>
+-                <div className="service-arrow-circle">
+-                  <ArrowRight size={12} />
+-                </div>
+-              </a>
+-            </div>
+-
+-            {/* Feature 5 */}
+-            <div className="service-card-green card-green">
+-              <div className="service-icon-green">
+-                <Cpu size={22} />
+-              </div>
+-              <h3 className="service-card-title">Multi-Model NIM Hub</h3>
+-              <p className="service-card-desc">Standardized on LiteLLM to run any model hosted on NVIDIA NIM (such as DeepSeek-v4-flash, Llama-3.3-70b-instruct, or Nemotron).</p>
+-              <a href="#compiler" className="service-card-more-btn">
+-                <span>See Specs</span>
+-                <div className="service-arrow-circle">
+-                  <ArrowRight size={12} />
+-                </div>
+-              </a>
+-            </div>
+-
+-            {/* Feature 6 */}
+-            <div className="service-card-green card-green">
+-              <div className="service-icon-green">
+-                <GraduationCap size={22} />
+-              </div>
+-              <h3 className="service-card-title">Execution Debugging</h3>
+-              <p className="service-card-desc">View recent run logs and detailed execution failure reports in the CLI. Let the agent parse the details and fix the errors instantly.</p>
+-              <a href="#compiler" className="service-card-more-btn">
+-                <span>See Specs</span>
+-                <div className="service-arrow-circle">
+-                  <ArrowRight size={12} />
+-                </div>
+-              </a>
+-            </div>
+-          </div>
+-        </div>
+-      </section>
++import React from 'react';
++import { Sparkles, Layers, Award, Terminal, Cpu, GraduationCap, ArrowRight } from 'lucide-react';
++
++export const Features: React.FC = () => {
++  return (
++    <section id="features" className="services-site reveal-on-scroll">
++      <div className="container">
++        <div className="section-badge-center">
++          <div className="badge-pill">
++            <div className="badge-dot"></div>
++            <span>Capabilities</span>
++          </div>
++          <h2 className="title-section">Unleash Autonomous <span className="text-neon">n8n Workflow</span> Creation</h2>
++          <p className="desc-section">
++            Equipped with modular Google ADK tools to design, audit, and debug your automation pipelines directly from the console.
++          </p>
++        </div>
++
++        <div className="services-grid-layout">
++          {/* Feature 1 */}
++          <div className="service-card-green card-green">
++            <div className="service-icon-green">
++              <Sparkles size={22} />
++            </div>
++            <h3 className="service-card-title">Autonomous JSON Creation</h3>
++            <p className="service-card-desc">Describe your automation goal in plain English, and the subagent builds a syntactically-correct n8n workflow JSON tree.</p>
++            <a href="#compiler" className="service-card-more-btn">
++              <span>See Specs</span>
++              <div className="service-arrow-circle">
++                <ArrowRight size={12} />
++              </div>
++            </a>
++          </div>
++
++          {/* Feature 2 */}
++          <div className="service-card-green card-green">
++            <div className="service-icon-green">
++              <Layers size={22} />
++            </div>
++            <h3 className="service-card-title">Self-Healing Validator Linter</h3>
++            <p className="service-card-desc">Automatically validates connections. If routing node names mismatch, the linter repairs the topology recursively before saving.</p>
++            <a href="#compiler" className="service-card-more-btn">
++              <span>See Specs</span>
++              <div className="service-arrow-circle">
++                <ArrowRight size={12} />
++              </div>
++            </a>
++          </div>
++
++          {/* Feature 3 */}
++          <div className="service-card-green card-green">
++            <div className="service-icon-green">
++              <Award size={22} />
++            </div>
++            <h3 className="service-card-title">Credential Auto-Discovery</h3>
++            <p className="service-card-desc">Queries active integrations (Slack, Sheets, Postgres) from n8n and automatically references them in nodes to run securely.</p>
++            <a href="#compiler" className="service-card-more-btn">
++              <span>See Specs</span>
++              <div className="service-arrow-circle">
++                <ArrowRight size={12} />
++              </div>
++            </a>
++          </div>
++
++          {/* Feature 4 */}
++          <div className="service-card-green card-green">
++            <div className="service-icon-green">
++              <Terminal size={22} />
++            </div>
++            <h3 className="service-card-title">Interactive Terminal Console</h3>
++            <p className="service-card-desc">Includes direct stateful command completions like `/list` (pipelines), `/history` (executions), or `/activate` for high-speed controls.</p>
++            <a href="#compiler" className="service-card-more-btn">
++              <span>See Specs</span>
++              <div className="service-arrow-circle">
++                <ArrowRight size={12} />
++              </div>
++            </a>
++          </div>
++
++          {/* Feature 5 */}
++          <div className="service-card-green card-green">
++            <div className="service-icon-green">
++              <Cpu size={22} />
++            </div>
++            <h3 className="service-card-title">Multi-Model NIM Hub</h3>
++            <p className="service-card-desc">Standardized on LiteLLM to run any model hosted on NVIDIA NIM (such as DeepSeek-v4-flash, Llama-3.3-70b-instruct, or Nemotron).</p>
++            <a href="#compiler" className="service-card-more-btn">
++              <span>See Specs</span>
++              <div className="service-arrow-circle">
++                <ArrowRight size={12} />
++              </div>
++            </a>
++          </div>
++
++          {/* Feature 6 */}
++          <div className="service-card-green card-green">
++            <div className="service-icon-green">
++              <GraduationCap size={22} />
++            </div>
++            <h3 className="service-card-title">Execution Debugging</h3>
++            <p className="service-card-desc">View recent run logs and detailed execution failure reports in the CLI. Let the agent parse the details and fix the errors instantly.</p>
++            <a href="#compiler" className="service-card-more-btn">
++              <span>See Specs</span>
++              <div className="service-arrow-circle">
++                <ArrowRight size={12} />
++              </div>
++            </a>
++          </div>
++        </div>
++      </div>
++    </section>
++  );
++};

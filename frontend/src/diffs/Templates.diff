@@ -1,0 +1,207 @@
+diff --git a/frontend/src/App.tsx b/frontend/src/components/Templates.tsx
+similarity index 92%
+rename from monolithic App.tsx (Templates Section)
+rename to frontend/src/components/Templates.tsx
+--- a/frontend/src/App.tsx
++++ b/frontend/src/components/Templates.tsx
+@@ -360,98 +360,104 @@
+-      {/* ── Workflow Templates / Mapped Specs Section ── */}
+-      <section id="templates" className="blogs-site reveal-on-scroll">
+-        <div className="container">
+-          <div className="section-badge-center">
+-            <div className="badge-pill">
+-              <div className="badge-dot"></div>
+-              <span>Workflow Templates</span>
+-            </div>
+-            <h2 className="title-section">Autonomous Workflow Specs Mapped by AI</h2>
+-            <p className="desc-section">
+-              Explore concrete examples of production-ready schemas generated automatically by the n8n CLI Agent.
+-            </p>
+-          </div>
+-
+-          <div className="blogs-grid-layout">
+-            {/* Card 1 */}
+-            <div className="blog-card-green card-green">
+-              <div className="blog-card-image-wrapper">
+-                <svg viewBox="0 0 400 200" style={{ width: '100%', height: '100%', background: '#080808' }}>
+-                  <rect x="0" y="0" width="400" height="200" fill="#040404" />
+-                  <circle cx="100" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <circle cx="200" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <circle cx="300" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <line x1="116" y1="100" x2="184" y2="100" stroke="var(--accent-color)" strokeWidth="1" strokeDasharray="4 4" />
+-                  <line x1="216" y1="100" x2="284" y2="100" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <text x="100" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">CRON</text>
+-                  <text x="200" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">POSTGRES</text>
+-                  <text x="300" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">SLACK</text>
+-                  <path d="M 0,20 Q 100,60 200,20 T 400,20" fill="none" stroke="rgba(220, 38, 38, 0.15)" strokeWidth="1" />
+-                </svg>
+-                <div className="blog-card-image-overlay"></div>
+-              </div>
+-              <div className="blog-card-body">
+-                <h3 className="blog-card-title">Daily SQL to Slack Reporting Node Wiring</h3>
+-                <p className="blog-card-desc">Scheduled Postgres database fetch wired horizontally to a corporate Slack notification node, utilizing local credentials.</p>
+-                <div className="blog-card-link-arrow">
+-                  <ArrowUpRight size={14} />
+-                </div>
+-              </div>
+-            </div>
+-
+-            {/* Card 2 */}
+-            <div className="blog-card-green card-green">
+-              <div className="blog-card-image-wrapper">
+-                <svg viewBox="0 0 400 200" style={{ width: '100%', height: '100%', background: '#080808' }}>
+-                  <rect x="0" y="0" width="400" height="200" fill="#040404" />
+-                  <circle cx="120" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <circle cx="280" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <line x1="136" y1="100" x2="264" y2="100" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <text x="120" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">WEBHOOK</text>
+-                  <text x="280" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">HTTP POST</text>
+-                </svg>
+-                <div className="blog-card-image-overlay"></div>
+-              </div>
+-              <div className="blog-card-body">
+-                <h3 className="blog-card-title">Ingest Webhook API POST Target Pipeline</h3>
+-                <p className="blog-card-desc">Incoming webhook trigger receiving JSON payloads, automatically connected to an HTTP request POST target method.</p>
+-                <div className="blog-card-link-arrow">
+-                  <ArrowUpRight size={14} />
+-                </div>
+-              </div>
+-            </div>
+-
+-            {/* Card 3 */}
+-            <div className="blog-card-green card-green">
+-              <div className="blog-card-image-wrapper">
+-                <svg viewBox="0 0 400 200" style={{ width: '100%', height: '100%', background: '#080808' }}>
+-                  <rect x="0" y="0" width="400" height="200" fill="#040404" />
+-                  <circle cx="100" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <circle cx="200" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <circle cx="300" cy="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <line x1="116" y1="100" x2="184" y2="100" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <line x1="216" y1="100" x2="284" y2="100" stroke="var(--accent-color)" strokeWidth="1" />
+-                  <text x="100" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">WEBHOOK</text>
+-                  <text x="200" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">GET DATA</text>
+-                  <text x="300" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">SHEETS</text>
+-                </svg>
+-                <div className="blog-card-image-overlay"></div>
+-              </div>
+-              <div className="blog-card-body">
+-                <h3 className="blog-card-title">Google Sheets CRM Contact Sync Spec</h3>
+-                <p className="blog-card-desc">Synchronizes incoming contact requests into rows inside a specific Google Sheets database, referencing saved OAuth profiles.</p>
+-                <div className="blog-card-link-arrow">
+-                  <ArrowUpRight size={14} />
+-                </div>
+-              </div>
+-            </div>
+-          </div>
+-
+-          <div style={{ textAlign: 'center' }}>
+-            <a href="#compiler" className="btn-outline btn-outline-green">
+-              <span>View More Spec Demos</span>
+-              <ArrowRight size={14} style={{ color: 'var(--accent-color)' }} />
+-            </a>
+-          </div>
+-        </div>
+-      </section>
++import React from 'react';
++import { ArrowUpRight, ArrowRight } from 'lucide-react';
++
++export const Templates: React.FC = () => {
++  return (
++    <section id="templates" className="blogs-site reveal-on-scroll">
++      <div className="container">
++        <div className="section-badge-center">
++          <div className="badge-pill">
++            <div className="badge-dot"></div>
++            <span>Workflow Templates</span>
++          </div>
++          <h2 className="title-section">Autonomous Workflow Specs Mapped by AI</h2>
++          <p className="desc-section">
++            Explore concrete examples of production-ready schemas generated automatically by the n8n CLI Agent.
++          </p>
++        </div>
++
++        <div className="blogs-grid-layout">
++          {/* Card 1 */}
++          <div className="blog-card-green card-green">
++            <div className="blog-card-image-wrapper">
++              <svg viewBox="0 0 400 200" style={{ width: '100%', height: '100%', background: '#080808' }}>
++                <rect x="0" y="0" width="400" height="200" fill="#040404" />
++                <circle cx="100" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
++                <circle cx="200" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
++                <circle cx="300" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
++                <line x1="116" y1="100" x2="184" y2="100" stroke="var(--accent-color)" strokeWidth="1" strokeDasharray="4 4" />
++                <line x1="216" y1="100" x2="284" y2="100" stroke="var(--accent-color)" strokeWidth="1" />
++                <text x="100" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">CRON</text>
++                <text x="200" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">POSTGRES</text>
++                <text x="300" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">SLACK</text>
++                <path d="M 0,20 Q 100,60 200,20 T 400,20" fill="none" stroke="rgba(220, 38, 38, 0.15)" strokeWidth="1" />
++              </svg>
++              <div className="blog-card-image-overlay"></div>
++            </div>
++            <div className="blog-card-body">
++              <h3 className="blog-card-title">Daily SQL to Slack Reporting Node Wiring</h3>
++              <p className="blog-card-desc">Scheduled Postgres database fetch wired horizontally to a corporate Slack notification node, utilizing local credentials.</p>
++              <div className="blog-card-link-arrow">
++                <ArrowUpRight size={14} />
++              </div>
++            </div>
++          </div>
++
++          {/* Card 2 */}
++          <div className="blog-card-green card-green">
++            <div className="blog-card-image-wrapper">
++              <svg viewBox="0 0 400 200" style={{ width: '100%', height: '100%', background: '#080808' }}>
++                <rect x="0" y="0" width="400" height="200" fill="#040404" />
++                <circle cx="120" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
++                <circle cx="280" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
++                <line x1="136" y1="100" x2="264" y2="100" stroke="var(--accent-color)" strokeWidth="1" />
++                <text x="120" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">WEBHOOK</text>
++                <text x="280" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">HTTP POST</text>
++              </svg>
++              <div className="blog-card-image-overlay"></div>
++            </div>
++            <div className="blog-card-body">
++              <h3 className="blog-card-title">Ingest Webhook API POST Target Pipeline</h3>
++              <p className="blog-card-desc">Incoming webhook trigger receiving JSON payloads, automatically connected to an HTTP request POST target method.</p>
++              <div className="blog-card-link-arrow">
++                <ArrowUpRight size={14} />
++              </div>
++            </div>
++          </div>
++
++          {/* Card 3 */}
++          <div className="blog-card-green card-green">
++            <div className="blog-card-image-wrapper">
++              <svg viewBox="0 0 400 200" style={{ width: '100%', height: '100%', background: '#080808' }}>
++                <rect x="0" y="0" width="400" height="200" fill="#040404" />
++                <circle cx="100" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
++                <circle cx="200" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
++                <circle cx="300" cy="100" r="16" fill="rgba(220, 38, 38, 0.05)" stroke="var(--accent-color)" strokeWidth="1" />
++                <line x1="116" y1="100" x2="184" y2="100" stroke="var(--accent-color)" strokeWidth="1" />
++                <line x1="216" y1="100" x2="284" y2="100" stroke="var(--accent-color)" strokeWidth="1" />
++                <text x="100" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">WEBHOOK</text>
++                <text x="200" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">GET DATA</text>
++                <text x="300" y="104" fontFamily="var(--sans)" fontSize="10" fill="#fff" textAnchor="middle">SHEETS</text>
++              </svg>
++              <div className="blog-card-image-overlay"></div>
++            </div>
++            <div className="blog-card-body">
++              <h3 className="blog-card-title">Google Sheets CRM Contact Sync Spec</h3>
++              <p className="blog-card-desc">Synchronizes incoming contact requests into rows inside a specific Google Sheets database, referencing saved OAuth profiles.</p>
++              <div className="blog-card-link-arrow">
++                <ArrowUpRight size={14} />
++              </div>
++            </div>
++          </div>
++        </div>
++
++        <div style={{ textAlign: 'center' }}>
++          <a href="#compiler" className="btn-outline btn-outline-green">
++            <span>View More Spec Demos</span>
++            <ArrowRight size={14} style={{ color: 'var(--accent-color)' }} />
++          </a>
++        </div>
++      </div>
++    </section>
++  );
++};

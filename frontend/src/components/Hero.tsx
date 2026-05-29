@@ -1,0 +1,57 @@
+import React from 'react';
+import DecryptedText from './DecryptedText';
+
+export const Hero: React.FC = () => {
+  return (
+    <section id="home" className="container hero-layout-green">
+      {/* Glow Shadow Dot Backdrop Effect */}
+      <div className="hero-glow-dot"></div>
+
+      {/* Semicircle glowing background elements */}
+      <div className="hero-semicircle-glow"></div>
+      <div className="hero-semicircle"></div>
+
+      <div className="hero-text-centered">
+        <div className="badge-pill" style={{ margin: '0 auto 24px auto' }}>
+          <div className="badge-dot"></div>
+          <span>Google ADK & NVIDIA NIM Powered CLI</span>
+        </div>
+        
+        <h1 className="title-hero">
+          <DecryptedText
+            text="AI Beyond Your "
+            animateOn="view"
+            speed={80}
+            maxIterations={10}
+            sequential={true}
+            revealDirection="start"
+            useOriginalCharsOnly={false}
+          />
+          <DecryptedText
+            text="Workflow Limits"
+            animateOn="view"
+            speed={80}
+            maxIterations={10}
+            sequential={true}
+            revealDirection="start"
+            useOriginalCharsOnly={false}
+            className="text-neon"
+          />
+        </h1>
+        
+        <p className="desc-hero">
+          Deploy autonomous multi-agent architects that design, build, test, and self-heal your n8n automation workflows directly from your terminal using conversational prompts.
+        </p>
+        
+        <div className="actions-hero">
+          <a href="#compiler" className="btn-outline" style={{ background: '#111111', borderColor: 'rgba(255,255,255,0.08)' }}>
+            <span>Try Spec Compiler</span>
+          </a>
+          <a href="#terminal-showcase" className="btn-outline" style={{ background: '#111111', borderColor: 'rgba(255,255,255,0.08)' }}>
+            <span>Explore CLI Features</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};

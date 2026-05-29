@@ -1,0 +1,215 @@
+diff --git a/frontend/src/App.tsx b/frontend/src/components/Setup.tsx
+similarity index 92%
+rename from monolithic App.tsx (Setup Section)
+rename to frontend/src/components/Setup.tsx
+--- a/frontend/src/App.tsx
++++ b/frontend/src/components/Setup.tsx
+@@ -559,102 +559,108 @@
+-      {/* ── Setup & Support Section (Setup) ── */}
+-      <section id="setup" className="contact-site reveal-on-scroll" style={{ borderTop: '1px solid rgba(255,255,255,0.02)' }}>
+-        <div className="container">
+-          <div className="section-badge-center">
+-            <div className="badge-pill">
+-              <div className="badge-dot"></div>
+-              <span>CLI Deploy Settings</span>
+-            </div>
+-            <h2 className="title-section">Deploy Your Agent</h2>
+-            <p className="desc-section">
+-              Review and dispatch your local configuration variables directly into your running environment.
+-            </p>
+-          </div>
+-
+-          <div className="contact-layout-grid">
+-            {/* Left Column: Holographic wireframe red brain illustration */}
+-            <div className="wireframe-brain-wrapper">
+-              <svg viewBox="0 0 400 400" className="wireframe-brain-svg">
+-                <path d="M 200 80 C 130 80, 80 120, 80 180 C 80 230, 110 260, 150 280 C 160 310, 170 330, 200 330 C 230 330, 240 310, 250 280 C 290 260, 320 230, 320 180 C 320 120, 270 80, 200 80 Z" fill="none" stroke="var(--accent-color)" strokeWidth="1" strokeOpacity="0.4" />
+-                <path d="M 120 180 Q 200 210 280 180" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.3" />
+-                <path d="M 100 150 Q 200 170 300 150" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.3" />
+-                <path d="M 110 210 Q 200 230 290 210" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.3" />
+-                <path d="M 200 80 C 170 140, 170 240, 200 330" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.4" />
+-                <path d="M 200 80 C 230 140, 230 240, 200 330" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.4" />
+-                <path d="M 150 100 A 70 70 0 0 0 100 220" fill="none" stroke="var(--accent-color)" strokeWidth="0.75" strokeOpacity="0.3" strokeDasharray="2 2" />
+-                <path d="M 170 120 A 50 50 0 0 0 120 250" fill="none" stroke="var(--accent-color)" strokeWidth="0.75" strokeOpacity="0.3" />
+-                <path d="M 250 100 A 70 70 0 0 1 300 220" fill="none" stroke="var(--accent-color)" strokeWidth="0.75" strokeOpacity="0.3" strokeDasharray="2 2" />
+-                <path d="M 230 120 A 50 50 0 0 1 280 250" fill="none" stroke="var(--accent-color)" strokeWidth="0.75" strokeOpacity="0.3" />
+-                <circle cx="200" cy="80" r="4" className="brain-mesh-node" />
+-                <circle cx="150" cy="110" r="3" className="brain-mesh-node" style={{ animationDelay: '0.5s' }} />
+-                <circle cx="250" cy="110" r="3" className="brain-mesh-node" style={{ animationDelay: '1s' }} />
+-                <circle cx="100" cy="160" r="3.5" className="brain-mesh-node" style={{ animationDelay: '1.5s' }} />
+-                <circle cx="300" cy="160" r="3.5" className="brain-mesh-node" style={{ animationDelay: '2s' }} />
+-                <circle cx="130" cy="220" r="3" className="brain-mesh-node" style={{ animationDelay: '0.2s' }} />
+-                <circle cx="270" cy="220" r="3" className="brain-mesh-node" style={{ animationDelay: '0.7s' }} />
+-                <circle cx="180" cy="260" r="3" className="brain-mesh-node" style={{ animationDelay: '1.2s' }} />
+-                <circle cx="220" cy="260" r="3" className="brain-mesh-node" style={{ animationDelay: '1.7s' }} />
+-                <circle cx="200" cy="330" r="4" className="brain-mesh-node" style={{ animationDelay: '2.2s' }} />
+-              </svg>
+-            </div>
+-
+-            {/* Right Column: Local Settings Mock Dispatch */}
+-            <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+-                <div>
+-                  <label className="form-label" style={{ color: '#aaaaaa' }}>Developer Email</label>
+-                  <input type="email" className="form-input-green" placeholder="developer@domain.com" required />
+-                </div>
+-                <div>
+-                  <label className="form-label" style={{ color: '#aaaaaa' }}>Local n8n URL</label>
+-                  <input type="text" className="form-input-green" placeholder="http://localhost:5678" required />
+-                </div>
+-              </div>
+-
+-              <div>
+-                <label className="form-label" style={{ color: '#aaaaaa' }}>Target NIM Model</label>
+-                <input type="text" className="form-input-green" placeholder="openai/deepseek-ai/deepseek-v4-flash" required />
+-              </div>
+-
+-              <div>
+-                <label className="form-label" style={{ color: '#aaaaaa' }}>Custom Integration Goals</label>
+-                <textarea className="form-input-green form-textarea-green" placeholder="Describe the nodes you plan to orchestrate (Postgres, Slack, CRM)..." required></textarea>
+-              </div>
+-
+-              <div>
+-                <button type="submit" className="compiler-submit-btn" style={{ width: 'auto', padding: '12px 32px', background: 'var(--accent-color)', color: '#fff', fontWeight: 700, border: 'none', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+-                  <span>Deploy Config Variables</span>
+-                  <Send size={13} fill="#fff" stroke="none" />
+-                </button>
+-              </div>
+-            </form>
+-          </div>
+-
+-          {/* Quick Configuration Settings */}
+-          <div className="quick-contact-bar-green">
+-            <div className="quick-contact-item">
+-              <Phone size={18} className="quick-contact-icon-green" />
+-              <div>
+-                <div className="quick-contact-label-green">N8N API Endpoint</div>
+-                <div className="quick-contact-value-green">/api/v1/workflows</div>
+-              </div>
+-            </div>
+-
+-            <div className="quick-contact-item">
+-              <Mail size={18} className="quick-contact-icon-green" />
+-              <div>
+-                <div className="quick-contact-label-green">Client Port</div>
+-                <div className="quick-contact-value-green">localhost:5678</div>
+-              </div>
+-            </div>
+-
+-            <div className="quick-contact-item">
+-              <MapPin size={18} className="quick-contact-icon-green" />
+-              <div>
+-                <div className="quick-contact-label-green">Framework Type</div>
+-                <div className="quick-contact-value-green">Google ADK v1.33.0</div>
+-              </div>
+-            </div>
+-          </div>
+-        </div>
+-      </section>
++import React from 'react';
++import { Send, Phone, Mail, MapPin } from 'lucide-react';
++
++export const Setup: React.FC = () => {
++  return (
++    <section id="setup" className="contact-site reveal-on-scroll" style={{ borderTop: '1px solid rgba(255,255,255,0.02)' }}>
++      <div className="container">
++        <div className="section-badge-center">
++          <div className="badge-pill">
++            <div className="badge-dot"></div>
++            <span>CLI Deploy Settings</span>
++          </div>
++          <h2 className="title-section">Deploy Your Agent</h2>
++          <p className="desc-section">
++            Review and dispatch your local configuration variables directly into your running environment.
++          </p>
++        </div>
++
++        <div className="contact-layout-grid">
++          {/* Left Column: Holographic wireframe red brain illustration */}
++          <div className="wireframe-brain-wrapper">
++            <svg viewBox="0 0 400 400" className="wireframe-brain-svg">
++              <path d="M 200 80 C 130 80, 80 120, 80 180 C 80 230, 110 260, 150 280 C 160 310, 170 330, 200 330 C 230 330, 240 310, 250 280 C 290 260, 320 230, 320 180 C 320 120, 270 80, 200 80 Z" fill="none" stroke="var(--accent-color)" strokeWidth="1" strokeOpacity="0.4" />
++              <path d="M 120 180 Q 200 210 280 180" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.3" />
++              <path d="M 100 150 Q 200 170 300 150" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.3" />
++              <path d="M 110 210 Q 200 230 290 210" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.3" />
++              <path d="M 200 80 C 170 140, 170 240, 200 330" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.4" />
++              <path d="M 200 80 C 230 140, 230 240, 200 330" fill="none" stroke="var(--accent-color)" strokeWidth="0.5" strokeOpacity="0.4" />
++              <path d="M 150 100 A 70 70 0 0 0 100 220" fill="none" stroke="var(--accent-color)" strokeWidth="0.75" strokeOpacity="0.3" strokeDasharray="2 2" />
++              <path d="M 170 120 A 50 50 0 0 0 120 250" fill="none" stroke="var(--accent-color)" strokeWidth="0.75" strokeOpacity="0.3" />
++              <path d="M 250 100 A 70 70 0 0 1 300 220" fill="none" stroke="var(--accent-color)" strokeWidth="0.75" strokeOpacity="0.3" strokeDasharray="2 2" />
++              <path d="M 230 120 A 50 50 0 0 1 280 250" fill="none" stroke="var(--accent-color)" strokeWidth="0.75" strokeOpacity="0.3" />
++              <circle cx="200" cy="80" r="4" className="brain-mesh-node" />
++              <circle cx="150" cy="110" r="3" className="brain-mesh-node" style={{ animationDelay: '0.5s' }} />
++              <circle cx="250" cy="110" r="3" className="brain-mesh-node" style={{ animationDelay: '1s' }} />
++              <circle cx="100" cy="160" r="3.5" className="brain-mesh-node" style={{ animationDelay: '1.5s' }} />
++              <circle cx="300" cy="160" r="3.5" className="brain-mesh-node" style={{ animationDelay: '2s' }} />
++              <circle cx="130" cy="220" r="3" className="brain-mesh-node" style={{ animationDelay: '0.2s' }} />
++              <circle cx="270" cy="220" r="3" className="brain-mesh-node" style={{ animationDelay: '0.7s' }} />
++              <circle cx="180" cy="260" r="3" className="brain-mesh-node" style={{ animationDelay: '1.2s' }} />
++              <circle cx="220" cy="260" r="3" className="brain-mesh-node" style={{ animationDelay: '1.7s' }} />
++              <circle cx="200" cy="330" r="4" className="brain-mesh-node" style={{ animationDelay: '2.2s' }} />
++            </svg>
++          </div>
++
++          {/* Right Column: Local Settings Mock Dispatch */}
++          <form onSubmit={(e) => e.preventDefault()} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
++            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
++              <div>
++                <label className="form-label" style={{ color: '#aaaaaa' }}>Developer Email</label>
++                <input type="email" className="form-input-green" placeholder="developer@domain.com" required />
++              </div>
++              <div>
++                <label className="form-label" style={{ color: '#aaaaaa' }}>Local n8n URL</label>
++                <input type="text" className="form-input-green" placeholder="http://localhost:5678" required />
++              </div>
++            </div>
++
++            <div>
++              <label className="form-label" style={{ color: '#aaaaaa' }}>Target NIM Model</label>
++              <input type="text" className="form-input-green" placeholder="openai/deepseek-ai/deepseek-v4-flash" required />
++            </div>
++
++            <div>
++              <label className="form-label" style={{ color: '#aaaaaa' }}>Custom Integration Goals</label>
++              <textarea className="form-input-green form-textarea-green" placeholder="Describe the nodes you plan to orchestrate (Postgres, Slack, CRM)..." required></textarea>
++            </div>
++
++            <div>
++              <button type="submit" className="compiler-submit-btn" style={{ width: 'auto', padding: '12px 32px', background: 'var(--accent-color)', color: '#fff', fontWeight: 700, border: 'none', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
++                <span>Deploy Config Variables</span>
++                <Send size={13} fill="#fff" stroke="none" />
++              </button>
++            </div>
++          </form>
++        </div>
++
++        {/* Quick Configuration Settings */}
++        <div className="quick-contact-bar-green">
++          <div className="quick-contact-item">
++            <Phone size={18} className="quick-contact-icon-green" />
++            <div>
++              <div className="quick-contact-label-green">N8N API Endpoint</div>
++              <div className="quick-contact-value-green">/api/v1/workflows</div>
++            </div>
++          </div>
++
++          <div className="quick-contact-item">
++            <Mail size={18} className="quick-contact-icon-green" />
++            <div>
++              <div className="quick-contact-label-green">Client Port</div>
++              <div className="quick-contact-value-green">localhost:5678</div>
++            </div>
++          </div>
++
++          <div className="quick-contact-item">
++            <MapPin size={18} className="quick-contact-icon-green" />
++            <div>
++              <div className="quick-contact-label-green">Framework Type</div>
++              <div className="quick-contact-value-green">Google ADK v1.33.0</div>
++            </div>
++          </div>
++        </div>
++      </div>
++    </section>
++  );
++};

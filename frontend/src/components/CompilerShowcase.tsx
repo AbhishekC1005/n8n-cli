@@ -1,0 +1,24 @@
+import React from 'react';
+import { WorkflowBuilder } from './WorkflowBuilder';
+
+export const CompilerShowcase: React.FC = () => {
+  return (
+    <section className="compiler-section reveal-on-scroll" id="compiler">
+      <div className="container">
+        <div className="section-badge-center">
+          <div className="badge-pill">
+            <div className="badge-dot"></div>
+            <span>JSON Spec Compiler</span>
+          </div>
+          <h2 className="title-section">Generate Your n8n Workflow JSON</h2>
+          <p className="desc-section">
+            Input your custom automation goal below, and our spec engine will instantly compile a validated, production-ready n8n JSON workflow draft.
+          </p>
+        </div>
+
+        {/* Interactive Specification Compiler */}
+        <WorkflowBuilder />
+      </div>
+    </section>
+  );
+};
