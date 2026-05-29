@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Activity } from 'lucide-react';
+import { ArrowRight, ShieldCheck } from 'lucide-react';
 
 export const Outcomes: React.FC = () => {
   return (
