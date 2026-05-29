@@ -1,0 +1,57 @@
+{
+  "name": "Scheduled Cron Workflow",
+  "nodes": [
+    {
+      "id": "schedule-trigger-node-id",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "slack-notification-node-id",
+      "name": "Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.1,
+      "position": [500, 300],
+      "parameters": {
+        "select": "channel",
+        "channelId": "C0123456789",
+        "text": "=Scheduled report executed at: {{ $now }}"
+      },
+      "credentials": {
+        "slackApi": {
+          "id": "slack-oauth2-cred-id",
+          "name": "Slack OAuth2 Account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false
+}

@@ -91,15 +91,14 @@ Set via the `MODEL` env var in `.env`.
 ```
 n8n-agent/
 ├── main.py                    # Entry point (interactive + one-shot CLI)
-├── adk_test/
+├── n8n_agent/                 # Streamlined Google ADK agent package
 │   ├── agent.py               # ADK agent definition + system prompt
-│   └── tools/
-│       ├── n8n_tools.py       # Tool functions exposed to the agent
-│       └── n8n_client.py      # Async n8n REST API client
-├── core/                      # Agent utilities
-├── n8n/                       # n8n schemas
-├── storage/                   # Persistence (cache, memory, backups)
-├── config.py                  # Settings
+│   ├── client.py              # Lightweight async n8n REST API client
+│   └── tools/                 # Modular package containing separate tools
+│       ├── __init__.py        # Tool exporter
+│       ├── get_credentials.py
+│       ├── list_workflows.py
+│       └── ...                # Other functional tools
 ├── .env.example               # Template environment config
 ├── requirements.txt           # Python dependencies
 └── pyproject.toml             # Project metadata

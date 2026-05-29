@@ -41,8 +41,13 @@ htmlcov/
 uv.lock
 
 # ── ADK artifacts & session data ────────────────────────────────
-adk_test/.adk/
+.adk/
+**/.adk/
+
+# ── CLI Session History ─────────────────────────────────────────
+.n8n_agent_history
 
 # ── Scratch / temp files ────────────────────────────────────────
 scratch_*.py
 test_nim.py
+
